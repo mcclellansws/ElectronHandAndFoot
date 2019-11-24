@@ -1,0 +1,19 @@
+{
+  "name": "wakeful-crown-weave",
+  "productName": "wakeful-crown-weave",
+  "description": "My Electron application description",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "sm16164",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^7.1.2",
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.1"
+  }
+}
