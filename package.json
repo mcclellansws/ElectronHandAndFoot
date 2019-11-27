@@ -7,6 +7,7 @@
   "keywords": [],
   "main": "./main.js",
   "author": "Steve McClellan",
+  "repository": "github:mcclellansws/ElectronHandAndFoot.git",
   "build": {
     "appId": "us.gfiowa.",
     "mac": {
@@ -14,7 +15,12 @@
     },
     "win": {
       "target": "NSIS",
-      "icon": "build/icon.ico"
+      "icon": "build/icon.ico",
+      "publish": [{
+        "provider": "github",
+        "owner": "mcclellansws",
+        "repo": "ElectronHandAndFoot"
+      }]
     }
   },
   "scripts": {
@@ -22,10 +28,12 @@
     "start": "electron . --enable-logging",
     "dev": "NODE_ENV='development' npm run start",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder --win --x64 --ia32",
+    "publish": "electron-builder --win --x64 --ia32 -p always"
   },
   "dependencies": {
     "electron-store": "^5.1.0",
+    "electron-updater": "^4.2.0",
     "jquery": "^3.4.1"
   },
   "devDependencies": {
