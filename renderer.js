@@ -16,7 +16,6 @@ function about() {
 }
 
 
-
 var hasStorage = false;
 var storageTag = 'hafSaveData';
 var scores = [];
