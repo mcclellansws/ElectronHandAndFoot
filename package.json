@@ -28,8 +28,8 @@
     "jquery": "^3.4.1"
   },
   "devDependencies": {
+    "electron": "^7.1.2",
     "electron-builder": "^21.2.0",
-    "electron": "latest",
-    "eslint": "latest"
+    "eslint": "^6.7.1"
   }
 }
