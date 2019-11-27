@@ -5,9 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Debug",
+            "type": "chrome",
+            "request": "launch",
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
+            "runtimeArgs": [
+                "${workspaceRoot}/main.js",
+                "--remote-debugging-port=9222"
+            ],
+            "webRoot": "${workspaceRoot}"
+        },
+        {
+            "name": "Launch Program",
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
             "skipFiles": [
                 "<node_internals>/**"
             ],

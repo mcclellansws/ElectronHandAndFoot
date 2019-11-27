@@ -1,19 +1,35 @@
 {
-  "name": "wakeful-crown-weave",
-  "productName": "wakeful-crown-weave",
-  "description": "My Electron application description",
+  "name": "HandAndFoot",
+  "version": "1.0.0",
+  "license": "MIT",
+  "productName": "HandAndFoot",
+  "description": "Hand and Foot scorecard",
   "keywords": [],
   "main": "./main.js",
-  "version": "1.0.0",
-  "author": "sm16164",
+  "author": "Steve McClellan",
+  "build": {
+    "appId": "us.gfiowa.",
+    "mac": {
+      "category": "public.app-category.card-games"
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.ico"
+    }
+  },
   "scripts": {
-    "start": "electron ."
+    "postinstall": "install-app-deps",
+    "start": "electron . --enable-logging",
+    "dev": "NODE_ENV='development' npm run start",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "dependencies": {
-    "electron": "^7.1.2",
     "jquery": "^3.4.1"
   },
   "devDependencies": {
-    "eslint": "^6.7.1"
+    "electron-builder": "^21.2.0",
+    "electron": "latest",
+    "eslint": "latest"
   }
 }
