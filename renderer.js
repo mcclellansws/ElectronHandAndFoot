@@ -1,5 +1,4 @@
-
-
+const {app} = require('electron').remote
 
 function copyright() {
   var dteNow = new Date();
@@ -444,6 +443,8 @@ function seatsObj() {
 }
 
 function init() {
+  document.getElementById('headerTitle').innerHTML = app.getName() + ' v' + app.getVersion()
+
   drawRoundTable();
 
   // create and load all the score Objects

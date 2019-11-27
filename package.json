@@ -1,8 +1,8 @@
 {
-  "name": "HandAndFoot",
-  "version": "2.1.1",
+  "name": "handandfoot",
+  "version": "2.1.2",
   "license": "MIT",
-  "productName": "HandAndFoot",
+  "productName": "Hand And Foot",
   "description": "Hand and Foot scorecard",
   "keywords": [],
   "main": "./main.js",
