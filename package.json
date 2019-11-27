@@ -25,6 +25,7 @@
     "dist": "electron-builder"
   },
   "dependencies": {
+    "electron-store": "^5.1.0",
     "jquery": "^3.4.1"
   },
   "devDependencies": {

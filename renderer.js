@@ -1,14 +1,8 @@
-// This file is required by the index.html file and will
-// be executed in the renderer process for that window.
-// All of the Node.js APIs are available in this process.
 
-/*
-  TODO:
-  * It is just a start.
-  * It needs more color; tooo white
-*/
+const Store = require('electron-store');
+const store = new Store()
 
-function clearall() {
+function copyright() {
   var dteNow = new Date();
   var intYear = dteNow.getFullYear();
   var firstYear = 2013;
@@ -20,6 +14,7 @@ function clearall() {
 function about() {
   alert(copyright());
 }
+
 
 
 var hasStorage = false;
@@ -425,7 +420,7 @@ function seatsObj() {
       return;
     var numTeams = numPlayers.getNumTeams();
     var names = this.getSeats(numTeams);
-    names.shuffle();
+    names.shuffle(); 
     setSeats(names, numTeams);
     clearScores(false);
   };
