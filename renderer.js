@@ -452,7 +452,8 @@ function seatsObj() {
 }
 
 function init() {
-  document.getElementById('headerTitle').innerHTML = app.name + ' v' + app.getVersion()
+  document.getElementById('headerTitle').innerHTML = app.name + ' v' + app.getVersion();
+  document.getElementById('footer').innerHTML = copyright();
 
   drawRoundTable();
 
