@@ -13,20 +13,19 @@ const store = new Store({
   configName: 'user-preferences',
   defaults: {
     // set default size of window
-    windowBounds: { width: 800, height: 1024 }
+    windowBounds: {
+      width: 800, height: 1024,
+    }
   }
 });
 
 function createWindow() {
-  let { width, height } = store.get('windowBounds');
+  var args = store.get('windowBounds');
+  args.webPreferences = {
+    nodeIntegration: true
+  }
   // Create the browser window.
-  mainWindow = new BrowserWindow({
-    width: width,
-    height: height,
-    webPreferences: {
-      nodeIntegration: true
-    }
-  });
+  mainWindow = new BrowserWindow(args);
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html');
@@ -42,16 +41,12 @@ function createWindow() {
     mainWindow = null;
   });
 
-  
-  // The BrowserWindow class extends the node.js core EventEmitter class, so we use that API
-  // to listen to events on the BrowserWindow. The resize event is emitted when the window size changes.
-  mainWindow.on('resize', () => {
-    // The event doesn't pass us the window size, so we call the `getBounds` method which returns an object with
-    // the height, width, and x and y coordinates.
-    let { width, height } = mainWindow.getBounds();
-    // Now that we have them, save them using the `set` method.
-    store.set('windowBounds', { width, height });
-  });
+  function saveWindowBounds() {
+    store.set('windowBounds', mainWindow.getBounds());
+  }
+
+  mainWindow.on('resize', saveWindowBounds);
+  mainWindow.on('move', saveWindowBounds);
 }
 
 // This method will be called when Electron has finished
