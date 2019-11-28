@@ -1,9 +1,9 @@
 {
   "name": "handandfoot",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "license": "MIT",
   "productName": "Hand And Foot",
-  "description": "Hand and Foot scorecard",
+  "description": "Hand and Foot Scorecard",
   "keywords": [],
   "main": "./main.js",
   "author": "Steve McClellan",

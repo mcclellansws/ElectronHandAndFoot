@@ -1,5 +1,14 @@
 const {app} = require('electron').remote
 
+
+// Listen for update messages
+const { ipcRenderer } = require('electron');
+ipcRenderer.on('updateStatusMessage', function(event, text) {
+  var container = document.getElementById('wrapperDiv');
+  container.innerHTML = text;
+});
+
+
 function copyright() {
   var dteNow = new Date();
   var intYear = dteNow.getFullYear();
@@ -443,7 +452,7 @@ function seatsObj() {
 }
 
 function init() {
-  document.getElementById('headerTitle').innerHTML = app.getName() + ' v' + app.getVersion()
+  document.getElementById('headerTitle').innerHTML = app.name + ' v' + app.getVersion()
 
   drawRoundTable();
 
@@ -568,7 +577,6 @@ function drawRoundTable() {
     $('#roundsArea').append(str.join(''));
   }
 }
-
 
 $(document).ready(function () {
 
