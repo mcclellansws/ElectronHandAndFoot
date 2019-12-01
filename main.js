@@ -1,7 +1,9 @@
 /*jshint esversion: 6 */
 // Modules to control application life and create native browser window
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Menu } = require('electron');
 const { autoUpdater } = require("electron-updater");
+
+// app.commandLine.appendSwitch('touch-events', 'enabled');
 
 autoUpdater.signals.progress
 // Keep a global reference of the window object, if you don't, the window will
@@ -29,7 +31,8 @@ function createWindow() {
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html');
-
+  mainWindow.focus();
+ 
   // Open the DevTools for debugging
   // mainWindow.webContents.openDevTools();
 

@@ -1,13 +1,11 @@
-const {app} = require('electron').remote
-
+const { app } = require('electron').remote
 
 // Listen for update messages
 const { ipcRenderer } = require('electron');
-ipcRenderer.on('updateStatusMessage', function(event, text) {
+ipcRenderer.on('updateStatusMessage', function (event, text) {
   var container = document.getElementById('wrapperDiv');
   container.innerHTML = text;
 });
-
 
 function copyright() {
   var dteNow = new Date();
@@ -22,7 +20,6 @@ function about() {
   alert(copyright());
 }
 
-
 var hasStorage = false;
 var storageTag = 'hafSaveData';
 var scores = [];
@@ -34,7 +31,6 @@ var TEAMS = 3;
 var MAX_PLAYERS = ROUNDS;
 
 var easterEgg = true;
-
 
 /*
  * General Utilties
@@ -216,7 +212,7 @@ var ScoresObj = function (round, team) {
     var dirty = 0;
 
     tmp = cut22Id_1.checked ? 1 : 0;
-    if (cut22Id_2.checked) tmp++;
+    if (cut22Id_2.checked) tmp++; 
     if (outId.checked) {
       tmp++;
       for (var i = 0; i < TEAMS; i++) {
@@ -426,7 +422,7 @@ function seatsObj() {
       return;
     var numTeams = numPlayers.getNumTeams();
     var names = this.getSeats(numTeams);
-    names.shuffle(); 
+    names.shuffle();
     setSeats(names, numTeams);
     clearScores(false);
   };
